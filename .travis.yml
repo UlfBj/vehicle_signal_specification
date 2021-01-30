@@ -19,7 +19,7 @@ install:
   - cd ..
 
 script:
-  - make clean json deploy
+  - make all
   - hugo -s ${DOCS_DIR}
 
 deploy:
