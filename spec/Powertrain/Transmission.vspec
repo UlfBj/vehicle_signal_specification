@@ -70,12 +70,19 @@ TravelledDistance:
 #
 # Current gear
 #
-Gear:
+CurrentGear:
+  datatype: int8
+  type: sensor
+  description: The current gear. 0=Neutral, 1/2/..=Forward, -1/..=Reverse
+
+
+#
+# Selected gear
+#
+SelectedGear:
   datatype: int8
   type: actuator
-  min: -1
-  max: 16
-  description: Current gear. 0=Neutral. -1=Reverse
+  description: The selected gear. 0=Neutral, 1/2/..=Forward, -1/..=Reverse, 126=Park, 127=Drive
 
 
 #
