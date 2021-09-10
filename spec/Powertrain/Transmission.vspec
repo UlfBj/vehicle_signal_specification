@@ -70,6 +70,18 @@ TravelledDistance:
 #
 # Current gear
 #
+Gear:
+  datatype: int8
+  type: actuator
+  min: -1
+  max: 16
+  description: Current gear. 0=Neutral. -1=Reverse
+  deprecation: V2.2 replaced by CurrentGear and SelectedGear
+
+
+#
+# Current gear
+#
 CurrentGear:
   datatype: int8
   type: sensor
