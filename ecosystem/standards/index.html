@@ -9,7 +9,7 @@
 
     <link rel="shortcut icon" href="/vehicle_signal_specification/images/fav.png" type="image/x-icon" />
 
-    <title>Data Unit Types :: Vehicle Signal Specification</title>
+    <title>Related Standards :: Vehicle Signal Specification</title>
 
     
     <link href="/vehicle_signal_specification/css/nucleus.css?1686307199" rel="stylesheet">
@@ -40,7 +40,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/vehicle_signal_specification/rule_set/data_entry/data_unit_types/">
+  <body class="" data-url="/vehicle_signal_specification/ecosystem/standards/">
     <nav id="sidebar" class="">
 
 
@@ -186,7 +186,7 @@
   
     
     <li data-nav-id="/vehicle_signal_specification/rule_set/" title="Rule Set" class="dd-item
-        parent
+        
         
         
         ">
@@ -257,7 +257,7 @@
   
     
     <li data-nav-id="/vehicle_signal_specification/rule_set/data_entry/" title="Data Entry" class="dd-item
-        parent
+        
         
         
         ">
@@ -325,7 +325,7 @@
  
   
     
-      <li data-nav-id="/vehicle_signal_specification/rule_set/data_entry/data_unit_types/" title="Data Unit Types" class="dd-item active">
+      <li data-nav-id="/vehicle_signal_specification/rule_set/data_entry/data_unit_types/" title="Data Unit Types" class="dd-item ">
         <a href="/vehicle_signal_specification/rule_set/data_entry/data_unit_types/">
         Data Unit Types
         
@@ -513,7 +513,7 @@
   
     
     <li data-nav-id="/vehicle_signal_specification/ecosystem/" title="Ecosystem" class="dd-item
-        
+        parent
         
         
         ">
@@ -560,7 +560,7 @@
  
   
     
-      <li data-nav-id="/vehicle_signal_specification/ecosystem/standards/" title="Related Standards" class="dd-item ">
+      <li data-nav-id="/vehicle_signal_specification/ecosystem/standards/" title="Related Standards" class="dd-item active">
         <a href="/vehicle_signal_specification/ecosystem/standards/">
         Related Standards
         
@@ -657,7 +657,7 @@
                   
                   
                   <div id="top-github-link">
-                    <a class="github-link" title='Edit this page' href="https://github.com/covesa/vehicle_signal_specification/edit/master/docs-gen/content/rule_set/data_entry/data_unit_types.md" target="blank">
+                    <a class="github-link" title='Edit this page' href="https://github.com/covesa/vehicle_signal_specification/edit/master/docs-gen/content/ecosystem/standards.md" target="blank">
                       <i class="fas fa-code-branch"></i>
                       <span id="top-github-link-text">Edit this page</span>
                     </a>
@@ -688,13 +688,7 @@
             
           
           
-            
-            
-          
-          
-            <a href='/vehicle_signal_specification/'>Vehicle Signal Specification</a> > <a href='/vehicle_signal_specification/rule_set/'>Rule Set</a> > <a href='/vehicle_signal_specification/rule_set/data_entry/'>Data Entry</a> > Data Unit Types
-          
-        
+            <a href='/vehicle_signal_specification/'>Vehicle Signal Specification</a> > <a href='/vehicle_signal_specification/ecosystem/'>Ecosystem</a> > Related Standards
           
         
           
@@ -709,12 +703,12 @@
     <div class="wrapper">
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#introduction-to-data-unit-types-in-vss">Introduction to Data Unit Types in VSS</a>
+    <li>
       <ul>
-        <li><a href="#logical-data-unit-types">Logical Data Unit Types</a></li>
+        <li><a href="#w3c-viss">W3C VISS</a></li>
+        <li><a href="#w3c-vsso">W3C VSSo</a></li>
       </ul>
     </li>
-    <li><a href="#list-of-supported-data-unit-types">List of supported Data Unit Types</a></li>
   </ul>
 </nav>
     </div>
@@ -732,338 +726,28 @@
           
             <h1>
               
-              Data Unit Types
+              Related Standards
             </h1>
           
 
         
 
 
-<h2 id="introduction-to-data-unit-types-in-vss">Introduction to Data Unit Types in VSS</h2>
-<p>It is in VSS possible for signals to specify a unit of measurement from a list of predefined data unit types.
-For most signals in the VSS standard catalog, a data unit type has been selected. A typical example is <code>Vehicle.Speed</code>, as shown below.</p>
-<pre tabindex="0"><code>Vehicle.Speed:
-  datatype: float
-  type: sensor
-  unit: km/h
-  description: Vehicle speed.
-</code></pre><p>The ambition when selecting data unit types for signals in VSS standard catalog has been to use either a unit based on SI-units,
-or a unit commonly used within the vehicle industry. For the <code>Vehicle.Speed</code> example above this means that <code>km/h</code> has been selected,
-even if <code>m/s</code> from an SI-perspective would have been a better choice.</p>
-<p>It must be noted that the selected unit does not imply that the value of <code>Vehicle.Speed</code> always needs to be sent or visualized
-as <code>km/h</code> (with float as datatype). A user interface or API may show or request vehicle speed in any unit it likes,
-and a transport protocol may send speed in another unit, possibly also involving scaling and offset.
-But in protocols not explicitly specifying data unit types (like <a href="https://raw.githack.com/w3c/automotive/gh-pages/spec/VISSv2_Core.html">VISS</a>)
-it is expected that <code>Vehicle.Speed</code> is sent and received as <code>km/h</code> (without scaling or offset).</p>
-<p>In some cases it is natural to omit the data unit type. This concerns typically signals where data type <code>string</code> is used,
-but also signals where the value just represents a number, like in the example below:</p>
-<pre tabindex="0"><code>Vehicle.Cabin.DoorCount:
-  datatype: uint8
-  type: attribute
-  default: 4
-  description: Number of doors in vehicle.
-</code></pre><h3 id="logical-data-unit-types">Logical Data Unit Types</h3>
-<p>VSS supports <code>percent</code> as data unit type, typically with 0 to 100% as the allowed range.
-In some cases, the definition on how to calculate the signal value is obvious, like for <code>Vehicle.Powertrain.FuelSystem.Level</code>
-below. It is likely that all VSS users will calculate fuel level in the same way, i.e. the meaning of a fuel level of 50%
-is well agreed, the liters of fuel in the tank is exactly 50% of nominal capacity.</p>
-<pre tabindex="0"><code>Vehicle.Powertrain.FuelSystem.Level:
-  datatype: uint8
-  type: sensor
-  unit: percent
-  min: 0
-  max: 100
-  description: Level in fuel tank as percent of capacity. 0 = empty. 100 = full.
-</code></pre><p>In other cases, the formula for calculating the signal is not obvious and is not specified in VSS. A typical example is shown below for clutch wear.
-While most VSS users likely can agree that a brand new clutch shall have 0 as &ldquo;ClutchWear&rdquo;,
-the exact formula for calculating clutch wear for a used clutch will likely be vehicle specific.
-Some vehicles might monitor actual wear, others might estimate it based on vehicle usage.
-This is in VSS called a logical range, a VSS user knows what range to use but are free to define the formula for calculating the value.
-Values from different vehicles (of different make/model) can not always be compared, as the formula used for calculation may differ.</p>
-<pre tabindex="0"><code>Vehicle.Powertrain.Transmission.ClutchWear:
-  datatype: uint8
-  type: sensor
-  unit: percent
-  max: 100
-  description: Clutch wear as percent. 0 = no wear. 100 = worn.
-</code></pre><h2 id="list-of-supported-data-unit-types">List of supported Data Unit Types</h2>
-<p>This list composed with definition according to International Units (SI) and few automotive specific units: <a href="https://www.iso.org/standard/30669.html">Specification</a>, <a href="https://en.wikipedia.org/wiki/International_System_of_Units">Wikipedia</a></p>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">Unit type</th>
-<th style="text-align:left">Domain</th>
-<th style="text-align:left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">mm</td>
-<td style="text-align:left">Distance</td>
-<td style="text-align:left">Distance measured in millimeters</td>
-</tr>
-<tr>
-<td style="text-align:left">cm</td>
-<td style="text-align:left">Distance</td>
-<td style="text-align:left">Distance measured in centimeters</td>
-</tr>
-<tr>
-<td style="text-align:left">m</td>
-<td style="text-align:left">Distance</td>
-<td style="text-align:left">Distance measured in meters</td>
-</tr>
-<tr>
-<td style="text-align:left">km</td>
-<td style="text-align:left">Distance</td>
-<td style="text-align:left">Distance measured in kilometers</td>
-</tr>
-<tr>
-<td style="text-align:left">inch</td>
-<td style="text-align:left">Distance</td>
-<td style="text-align:left">Distance measured in inches</td>
-</tr>
-<tr>
-<td style="text-align:left">km/h</td>
-<td style="text-align:left">Speed</td>
-<td style="text-align:left">Speed measured in kilometers per hours</td>
-</tr>
-<tr>
-<td style="text-align:left">m/s</td>
-<td style="text-align:left">Speed</td>
-<td style="text-align:left">Speed measured in meters per second</td>
-</tr>
-<tr>
-<td style="text-align:left">m/s^2</td>
-<td style="text-align:left">Acceleration</td>
-<td style="text-align:left">Acceleration measured in meters per second squared</td>
-</tr>
-<tr>
-<td style="text-align:left">cm/s^2</td>
-<td style="text-align:left">Acceleration</td>
-<td style="text-align:left">Acceleration measured in centimeters per second squared</td>
-</tr>
-<tr>
-<td style="text-align:left">ml</td>
-<td style="text-align:left">Volume</td>
-<td style="text-align:left">Volume measured in milliliters</td>
-</tr>
-<tr>
-<td style="text-align:left">l</td>
-<td style="text-align:left">Volume</td>
-<td style="text-align:left">Volume measured in liters</td>
-</tr>
-<tr>
-<td style="text-align:left">cm^3</td>
-<td style="text-align:left">Volume</td>
-<td style="text-align:left">Volume measured in cubic centimeters</td>
-</tr>
-<tr>
-<td style="text-align:left">celsius</td>
-<td style="text-align:left">Temperature</td>
-<td style="text-align:left">Temperature measured in degree celsius</td>
-</tr>
-<tr>
-<td style="text-align:left">degrees</td>
-<td style="text-align:left">Angle</td>
-<td style="text-align:left">Angle measured in degrees</td>
-</tr>
-<tr>
-<td style="text-align:left">degrees/s</td>
-<td style="text-align:left">Angular Speed</td>
-<td style="text-align:left">Angular speed measured in degrees per second</td>
-</tr>
-<tr>
-<td style="text-align:left">W</td>
-<td style="text-align:left">Power</td>
-<td style="text-align:left">Power measured in watts</td>
-</tr>
-<tr>
-<td style="text-align:left">kW</td>
-<td style="text-align:left">Power</td>
-<td style="text-align:left">Power measured in kilowatts</td>
-</tr>
-<tr>
-<td style="text-align:left">PS</td>
-<td style="text-align:left">Power</td>
-<td style="text-align:left">Power measured in horsepower</td>
-</tr>
-<tr>
-<td style="text-align:left">kWh</td>
-<td style="text-align:left">Energy Consumption</td>
-<td style="text-align:left">Energy consumption measured in kilowatt hours</td>
-</tr>
-<tr>
-<td style="text-align:left">g</td>
-<td style="text-align:left">Weight</td>
-<td style="text-align:left">Mass measured in grams</td>
-</tr>
-<tr>
-<td style="text-align:left">kg</td>
-<td style="text-align:left">Weight</td>
-<td style="text-align:left">Mass measured in kilograms</td>
-</tr>
-<tr>
-<td style="text-align:left">lbs</td>
-<td style="text-align:left">Weight</td>
-<td style="text-align:left">Mass measured in pounds</td>
-</tr>
-<tr>
-<td style="text-align:left">V</td>
-<td style="text-align:left">Electric Potential</td>
-<td style="text-align:left">Electric potential measured in volts</td>
-</tr>
-<tr>
-<td style="text-align:left">A</td>
-<td style="text-align:left">Electric Current</td>
-<td style="text-align:left">Electric current measured in amperes</td>
-</tr>
-<tr>
-<td style="text-align:left">Ah</td>
-<td style="text-align:left">Electric Charge</td>
-<td style="text-align:left">Electric charge measured in ampere hours</td>
-</tr>
-<tr>
-<td style="text-align:left">ms</td>
-<td style="text-align:left">Time</td>
-<td style="text-align:left">Time measured in milliseconds</td>
-</tr>
-<tr>
-<td style="text-align:left">s</td>
-<td style="text-align:left">Time</td>
-<td style="text-align:left">Time measured in seconds</td>
-</tr>
-<tr>
-<td style="text-align:left">min</td>
-<td style="text-align:left">Time</td>
-<td style="text-align:left">Time measured in minutes</td>
-</tr>
-<tr>
-<td style="text-align:left">h</td>
-<td style="text-align:left">Time</td>
-<td style="text-align:left">Time measured in hours</td>
-</tr>
-<tr>
-<td style="text-align:left">day</td>
-<td style="text-align:left">Time</td>
-<td style="text-align:left">Time measured in days</td>
-</tr>
-<tr>
-<td style="text-align:left">weeks</td>
-<td style="text-align:left">Time</td>
-<td style="text-align:left">Time measured in weeks</td>
-</tr>
-<tr>
-<td style="text-align:left">months</td>
-<td style="text-align:left">Time</td>
-<td style="text-align:left">Time measured in months</td>
-</tr>
-<tr>
-<td style="text-align:left">years</td>
-<td style="text-align:left">Time</td>
-<td style="text-align:left">Time measured in years</td>
-</tr>
-<tr>
-<td style="text-align:left">UNIX Timestamp</td>
-<td style="text-align:left">Time</td>
-<td style="text-align:left">Unix time is a system for describing a point in time. It is the number of seconds that have elapsed since the Unix epoch, excluding leap seconds.</td>
-</tr>
-<tr>
-<td style="text-align:left">mbar</td>
-<td style="text-align:left">Pressure</td>
-<td style="text-align:left">Pressure measured in millibars</td>
-</tr>
-<tr>
-<td style="text-align:left">Pa</td>
-<td style="text-align:left">Pressure</td>
-<td style="text-align:left">Pressure measured in pascal</td>
-</tr>
-<tr>
-<td style="text-align:left">kPa</td>
-<td style="text-align:left">Pressure</td>
-<td style="text-align:left">Pressure measured in kilopascal</td>
-</tr>
-<tr>
-<td style="text-align:left">stars</td>
-<td style="text-align:left">Rating</td>
-<td style="text-align:left">Rating measured in stars</td>
-</tr>
-<tr>
-<td style="text-align:left">g/s</td>
-<td style="text-align:left">Mass per time</td>
-<td style="text-align:left">Mass per time measured in grams per second</td>
-</tr>
-<tr>
-<td style="text-align:left">g/km</td>
-<td style="text-align:left">Mass per distance</td>
-<td style="text-align:left">Mass per distance measured in grams per kilometers</td>
-</tr>
-<tr>
-<td style="text-align:left">kWh/100km</td>
-<td style="text-align:left">Energy Consumption per distance</td>
-<td style="text-align:left">Energy consumption per distance measured in kilowatt hours per 100 kilometers</td>
-</tr>
-<tr>
-<td style="text-align:left">ml/100km</td>
-<td style="text-align:left">Volume per distance</td>
-<td style="text-align:left">Volume per distance measured in milliliters per 100 kilometers</td>
-</tr>
-<tr>
-<td style="text-align:left">l/100km</td>
-<td style="text-align:left">Volume per distance</td>
-<td style="text-align:left">Volume per distance measured in liters per 100 kilometers</td>
-</tr>
-<tr>
-<td style="text-align:left">l/h</td>
-<td style="text-align:left">Flow</td>
-<td style="text-align:left">Flow measured in liters per hour</td>
-</tr>
-<tr>
-<td style="text-align:left">mpg</td>
-<td style="text-align:left">Distance per Volume</td>
-<td style="text-align:left">Distance per volume measured in miles per gallon</td>
-</tr>
-<tr>
-<td style="text-align:left">N</td>
-<td style="text-align:left">Force</td>
-<td style="text-align:left">Force measured in newton</td>
-</tr>
-<tr>
-<td style="text-align:left">Nm</td>
-<td style="text-align:left">Torque</td>
-<td style="text-align:left">Torque measured in newton meters</td>
-</tr>
-<tr>
-<td style="text-align:left">rpm</td>
-<td style="text-align:left">Rotational Speed</td>
-<td style="text-align:left">Rotational speed measured in revolutions per minute</td>
-</tr>
-<tr>
-<td style="text-align:left">Hz</td>
-<td style="text-align:left">Frequency</td>
-<td style="text-align:left">Frequency measured in hertz</td>
-</tr>
-<tr>
-<td style="text-align:left">ratio</td>
-<td style="text-align:left">Relation</td>
-<td style="text-align:left">Relation measured as ratio</td>
-</tr>
-<tr>
-<td style="text-align:left">percent</td>
-<td style="text-align:left">Relation</td>
-<td style="text-align:left">Relation measured in percent</td>
-</tr>
-<tr>
-<td style="text-align:left">&hellip;</td>
-<td style="text-align:left">&hellip;</td>
-<td style="text-align:left">&hellip;</td>
-</tr>
-</tbody>
-</table>
-<p><a href="https://github.com/COVESA/vss-tools">VSS-Tools</a> require that a unit file is available when transforming *.vspec files.
-It can be specified by the <code>-u</code> parameter, and if not given the tools will search for a file <code>units.yaml</code>
-in the same directory as the root *.vspec file.</p>
-<p>The VSS standard catalog is based on <a href="https://github.com/COVESA/vehicle_signal_specification/blob/master/spec/units.yaml">units.yaml</a>,
-i.e. only units from that file can be used.</p>
+<p>Ohter standards or specifications sometimes reference VSS.</p>
+<h3 id="w3c-viss">W3C VISS</h3>
+<p>When using VSS in an automotive tech stack, a question is which protocols and technologies to use to <em>access</em> VSS signals.</p>
+<p>The W3C Vehicle Information Service Specification (<strong>VISS</strong>) is an open standard, specifying a protocol to access VSS data via websocket (VISSv1, VISSv2) or HTTP/MQTT (VISSv2).</p>
+<p>To learn more check</p>
+<ul>
+<li><a href="https://www.w3.org/TR/vehicle-information-service/">Vehicle Information Service Specification (VISS) V1</a> published as a Discontinued Draft.</li>
+<li><a href="https://github.com/w3c/automotive/">Vehicle Information Service Specification (VISS) V2</a>,  feature complete and in process to enter the Candidate Recommendation stage.</li>
+</ul>
+<h3 id="w3c-vsso">W3C VSSo</h3>
+<p>If you want to interconnect VSS data with other domains, you might want to employ ontology-based tech stacks. The W3C VSS Ontology enables you to express VSS in form of an OWL ontology.</p>
+<p>To learn more check</p>
+<ul>
+<li><a href="https://www.w3.org/TR/vsso-core/">VSSo Core: Vehicle Signal Specification Core Ontology</a></li>
+</ul>
 
 
 <footer class="footline">
@@ -1168,7 +852,6 @@ i.e. only units from that file can be used.</p>
             
                 
                     
-                    
                 
                 
 
@@ -1183,110 +866,6 @@ i.e. only units from that file can be used.</p>
             
             
                 
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
                     
                 
                 
@@ -1328,8 +907,50 @@ i.e. only units from that file can be used.</p>
                     
 
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
             
         
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
                     
             
         
@@ -1414,6 +1035,9 @@ i.e. only units from that file can be used.</p>
                     
 
                     
+            
+        
+                    
                         
             
             
@@ -1426,6 +1050,9 @@ i.e. only units from that file can be used.</p>
                     
                     
 
+                    
+            
+        
                     
             
         
@@ -1450,6 +1077,59 @@ i.e. only units from that file can be used.</p>
             
             
                 
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
                     
                 
                 
@@ -1474,10 +1154,10 @@ i.e. only units from that file can be used.</p>
 	 
 	 
 		
-			<a class="nav nav-prev" href="/vehicle_signal_specification/rule_set/data_entry/data_types_struct/" title="Struct Types"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/vehicle_signal_specification/ecosystem/tools/" title="Official VSS-Tools"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/vehicle_signal_specification/rule_set/data_entry/sensor_actuator/" title="Sensors &amp; Actuators" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/vehicle_signal_specification/ecosystem/software/" title="Software &amp; Solutions" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
