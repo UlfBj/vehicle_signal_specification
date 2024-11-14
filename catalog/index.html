@@ -5,30 +5,28 @@
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.129.0">
     <meta name="generator" content="Relearn 6.0.0">
-    <meta name="description" content="What is VSS? The Vehicle Signal Specification introduces a domain taxonomy for vehicle signals. In short this means that VSS introduces:
-A syntax for defining vehicle signals in a structured manner. A catalog of signals related to vehicles. It can be used as standard in automotive applications to communicate information around the vehicle, which is semantically well defined. It focuses on vehicle signals, in the sense of classical attributes, sensors and actuators with the raw data communicated over vehicle buses and data which is more commonly associated with the infotainment system alike.">
+    <meta name="description" content="VSS Catalog The source for the COVESA VSS Catalog can be found in *.vspec files in the COVESA VSS Repository. Released versions of the catalog in various formats can be found at release artifacts.
+Each signal in the VSS catalog has a description field and they may have a comment field. In some cases that is not sufficient to explain the rationale for the signal and how it is intended to be used.">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Overview :: Vehicle Signal Specification">
-    <meta name="twitter:description" content="What is VSS? The Vehicle Signal Specification introduces a domain taxonomy for vehicle signals. In short this means that VSS introduces:
-A syntax for defining vehicle signals in a structured manner. A catalog of signals related to vehicles. It can be used as standard in automotive applications to communicate information around the vehicle, which is semantically well defined. It focuses on vehicle signals, in the sense of classical attributes, sensors and actuators with the raw data communicated over vehicle buses and data which is more commonly associated with the infotainment system alike.">
-    <meta property="og:url" content="https://covesa.github.io/vehicle_signal_specification/introduction/overview/index.html">
+    <meta name="twitter:title" content="VSS Catalog :: Vehicle Signal Specification">
+    <meta name="twitter:description" content="VSS Catalog The source for the COVESA VSS Catalog can be found in *.vspec files in the COVESA VSS Repository. Released versions of the catalog in various formats can be found at release artifacts.
+Each signal in the VSS catalog has a description field and they may have a comment field. In some cases that is not sufficient to explain the rationale for the signal and how it is intended to be used.">
+    <meta property="og:url" content="https://covesa.github.io/vehicle_signal_specification/catalog/index.html">
     <meta property="og:site_name" content="Vehicle Signal Specification">
-    <meta property="og:title" content="Overview :: Vehicle Signal Specification">
-    <meta property="og:description" content="What is VSS? The Vehicle Signal Specification introduces a domain taxonomy for vehicle signals. In short this means that VSS introduces:
-A syntax for defining vehicle signals in a structured manner. A catalog of signals related to vehicles. It can be used as standard in automotive applications to communicate information around the vehicle, which is semantically well defined. It focuses on vehicle signals, in the sense of classical attributes, sensors and actuators with the raw data communicated over vehicle buses and data which is more commonly associated with the infotainment system alike.">
+    <meta property="og:title" content="VSS Catalog :: Vehicle Signal Specification">
+    <meta property="og:description" content="VSS Catalog The source for the COVESA VSS Catalog can be found in *.vspec files in the COVESA VSS Repository. Released versions of the catalog in various formats can be found at release artifacts.
+Each signal in the VSS catalog has a description field and they may have a comment field. In some cases that is not sufficient to explain the rationale for the signal and how it is intended to be used.">
     <meta property="og:locale" content="en-us">
-    <meta property="og:type" content="article">
-    <meta property="article:section" content="Introduction">
-    <meta property="article:published_time" content="2019-07-30T14:46:01+02:00">
-    <meta property="article:modified_time" content="2019-07-30T14:46:01+02:00">
-    <meta itemprop="name" content="Overview :: Vehicle Signal Specification">
-    <meta itemprop="description" content="What is VSS? The Vehicle Signal Specification introduces a domain taxonomy for vehicle signals. In short this means that VSS introduces:
-A syntax for defining vehicle signals in a structured manner. A catalog of signals related to vehicles. It can be used as standard in automotive applications to communicate information around the vehicle, which is semantically well defined. It focuses on vehicle signals, in the sense of classical attributes, sensors and actuators with the raw data communicated over vehicle buses and data which is more commonly associated with the infotainment system alike.">
-    <meta itemprop="datePublished" content="2019-07-30T14:46:01+02:00">
-    <meta itemprop="dateModified" content="2019-07-30T14:46:01+02:00">
-    <meta itemprop="wordCount" content="271">
-    <title>Overview :: Vehicle Signal Specification</title><link rel="shortcut icon" href="/vehicle_signal_specification/images/fav.png" type="image/x-icon" />
+    <meta property="og:type" content="website">
+    <meta itemprop="name" content="VSS Catalog :: Vehicle Signal Specification">
+    <meta itemprop="description" content="VSS Catalog The source for the COVESA VSS Catalog can be found in *.vspec files in the COVESA VSS Repository. Released versions of the catalog in various formats can be found at release artifacts.
+Each signal in the VSS catalog has a description field and they may have a comment field. In some cases that is not sufficient to explain the rationale for the signal and how it is intended to be used.">
+    <meta itemprop="datePublished" content="2019-08-04T12:46:30+02:00">
+    <meta itemprop="dateModified" content="2019-08-04T12:46:30+02:00">
+    <meta itemprop="wordCount" content="99">
+    <title>VSS Catalog :: Vehicle Signal Specification</title>
+    <link href="/vehicle_signal_specification/catalog/index.xml" rel="alternate" type="application/rss+xml" title="VSS Catalog :: Vehicle Signal Specification"><link rel="shortcut icon" href="/vehicle_signal_specification/images/fav.png" type="image/x-icon" />
 
     <link href="/vehicle_signal_specification/css/fontawesome-all.min.css?1731586528" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/vehicle_signal_specification/css/fontawesome-all.min.css?1731586528" rel="stylesheet"></noscript>
     <link href="/vehicle_signal_specification/css/nucleus.css?1731586528" rel="stylesheet">
@@ -43,8 +41,8 @@ A syntax for defining vehicle signals in a structured manner. A catalog of signa
     <script src="/vehicle_signal_specification/js/variant.js?1731586528"></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.relBasePath='..\/..';
-      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.relBasePath='..';
+      window.relearn.relBaseUri='..\/..';
       window.relearn.absBaseUri='https:\/\/covesa.github.io\/vehicle_signal_specification';
       window.index_js_url="/vehicle_signal_specification/index.search.js";
       // variant stuff
@@ -60,7 +58,7 @@ A syntax for defining vehicle signals in a structured manner. A catalog of signa
       window.T_N_results_found = `{1} results found for "{0}"`;
     </script>
   </head>
-  <body class="mobile-support html disableInlineCopyToClipboard" data-url="/vehicle_signal_specification/introduction/overview/index.html">
+  <body class="mobile-support html disableInlineCopyToClipboard" data-url="/vehicle_signal_specification/catalog/index.html">
     <div id="R-body" class="default-animation">
       <div id="R-body-overlay"></div>
       <nav id="R-topbar">
@@ -73,14 +71,7 @@ A syntax for defining vehicle signals in a structured manner. A catalog of signa
               <div class="topbar-content">
                 <div class="topbar-content-wrapper"><nav class="TableOfContents">
   <ul>
-    <li><a href="#what-is-vss">What is VSS?</a>
-      <ul>
-        <li><a href="#whats-in">What&rsquo;s in</a></li>
-        <li><a href="#whats-out">What&rsquo;s out</a></li>
-      </ul>
-    </li>
-    <li><a href="#example">Example</a></li>
-    <li><a href="#vss-usage-for-other-domains">VSS usage for other domains</a></li>
+    <li><a href="#vss-catalog-concepts">VSS Catalog Concepts</a></li>
   </ul>
 </nav>
                 </div>
@@ -89,16 +80,15 @@ A syntax for defining vehicle signals in a structured manner. A catalog of signa
           </div>
           <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li
             itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/vehicle_signal_specification/index.html"><span itemprop="name">Vehicle Signal Specification</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li
-            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/vehicle_signal_specification/introduction/index.html"><span itemprop="name">Introduction</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li
-            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Overview</span><meta itemprop="position" content="3"></li>
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">VSS Catalog</span><meta itemprop="position" content="2"></li>
           </ol>
           <div class="topbar-area topbar-area-end" data-area="end">
 				
-            <div class="topbar-button topbar-button-edit" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show"><a class="topbar-control" href="https://github.com/covesa/vehicle_signal_specification/edit/master/docs-gen/content/introduction/overview.md" target="_blank" title="Edit (CTRL&#43;ALT&#43;w)"><i class="fa-fw fas fa-pen"></i></a>
+            <div class="topbar-button topbar-button-edit" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show"><a class="topbar-control" href="https://github.com/covesa/vehicle_signal_specification/edit/master/docs-gen/content/catalog/_index.md" target="_blank" title="Edit (CTRL&#43;ALT&#43;w)"><i class="fa-fw fas fa-pen"></i></a>
             </div>
-            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/vehicle_signal_specification/introduction/index.html" title="Introduction (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/vehicle_signal_specification/rule_set/overlay/index.html" title="Overlay (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
             </div>
-            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/vehicle_signal_specification/introduction/taxonomy/index.html" title="Taxonomies (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/vehicle_signal_specification/catalog/vehicle_motion_management/index.html" title="Vehicle Motion Management (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
             </div>
             <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
               <div class="topbar-content">
@@ -112,54 +102,23 @@ A syntax for defining vehicle signals in a structured manner. A catalog of signa
         </div>
       </nav>
       <div id="R-main-overlay"></div>
-      <main id="R-body-inner" class="highlightable default" tabindex="-1">
+      <main id="R-body-inner" class="highlightable chapter narrow" tabindex="-1">
         <div class="flex-block-wrapper">
-          <article class="default">
+          <article class="chapter">
             <header class="headline">
             </header>
+<div class="article-subheading">Chapter 25</div>
 
-<h1 id="overview">Overview</h1>
+<h1 id="vss-catalog">VSS Catalog</h1>
 
-<h2 id="what-is-vss">What is VSS?</h2>
-<p>The Vehicle Signal Specification introduces a domain taxonomy for vehicle signals.
-In short this means that VSS introduces:</p>
+<h1 id="vss-catalog">VSS Catalog</h1>
+<p>The source for the COVESA VSS Catalog can be found in <code>*.vspec</code> files in the <a href="https://github.com/COVESA/vehicle_signal_specification" rel="external" target="_blank">COVESA VSS Repository</a>.
+Released versions of the catalog in various formats can be found at <a href="https://github.com/COVESA/vehicle_signal_specification/releases" rel="external" target="_blank">release artifacts</a>.</p>
+<p>Each signal in the VSS catalog has a <code>description</code> field and they may have a <code>comment</code> field. In some cases that is not sufficient to explain the rationale for the signal and how it is intended to be used. This section of the VSS documentation gives additional information on selected signal.</p>
+<h2 id="vss-catalog-concepts">VSS Catalog Concepts</h2>
 <ul>
-<li>A syntax for defining vehicle signals in a structured manner.</li>
-<li>A catalog of signals related to vehicles.</li>
+<li><a href="/vehicle_signal_specification/catalog/vehicle_motion_management">Vehicle Motion Management</a> Information on the VSS concept for motion management.</li>
 </ul>
-<p>It can be used as standard in automotive applications to communicate information
-around the vehicle, which is semantically well defined. It focuses on vehicle
-signals, in the sense of classical attributes, sensors and actuators with the raw data
-communicated over vehicle buses and data which is more commonly associated with
-the infotainment system alike.</p>
-<p>A standardized vehicle data specification allows an industry actor to use a
-common naming space for communication and, ultimately, abstracts underlying
-vehicle implementation details.</p>
-<p>While the data in the VSS standard catalog aims to be vendor-independent,
-vendor specific extensions and adaptations complying with the VSS syntax rules can be specified
-(see <a href="/vehicle_signal_specification/rule_set/overlay/">Overlays</a>).</p>
-<h3 id="whats-in">What&rsquo;s in</h3>
-<ul>
-<li>Standardized data definition for vehicle signals.</li>
-<li>Same semantic understanding across different domains.</li>
-<li>Basic definition for interfaces working on vehicle data (w3c, etc.).</li>
-</ul>
-<h3 id="whats-out">What&rsquo;s out</h3>
-<ul>
-<li>Everything outside the vehicle signal domain (customer, weather, etc.).</li>
-<li>Concrete interface definition.</li>
-</ul>
-<h2 id="example">Example</h2>
-<p>The figure below shows an example snapshot of a generated tree of the
-specification. The leafs contain the actual information as shown in the figure.
-Before going into detail of the specification, let&rsquo;s dig deeper into taxonomies.</p>
-<p><a href="#R-image-d38f79286bb35d8eef511a50de851892" class="lightbox-link"><img alt="Example tree" class="noborder lazy lightbox shadow figure-image" loading="lazy" src="/vehicle_signal_specification/images/tree.png?classes=shadow&width=60pc" style=" height: auto; width: 60pc;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-d38f79286bb35d8eef511a50de851892"><img alt="Example tree" class="noborder lazy lightbox shadow lightbox-image" loading="lazy" src="/vehicle_signal_specification/images/tree.png?classes=shadow&width=60pc"></a></p>
-<h2 id="vss-usage-for-other-domains">VSS usage for other domains</h2>
-<p>The VSS catalog focuses on signals related to vehicles.
-It is not the intention of the VSS project to add signals for other domains.
-The syntax used for defining VSS signals and related tooling could however be used to define similar signal trees
-for other domains.</p>
 
             <footer class="footline">
             </footer>
@@ -201,8 +160,8 @@ for other domains.</p>
       <div id="R-content-wrapper" class="highlightable">
         <div id="R-topics">
           <ul class="enlarge morespace collapsible-menu">
-          <li data-nav-id="/vehicle_signal_specification/introduction/index.html" class="parent "><a class="padding" href="/vehicle_signal_specification/introduction/index.html">Introduction</a><ul id="R-subsections-f5db5b284a3d023503978d00824e9c16" class="morespace collapsible-menu">
-          <li data-nav-id="/vehicle_signal_specification/introduction/overview/index.html" class="active"><a class="padding" href="/vehicle_signal_specification/introduction/overview/index.html">Overview</a></li>
+          <li data-nav-id="/vehicle_signal_specification/introduction/index.html" class=""><a class="padding" href="/vehicle_signal_specification/introduction/index.html">Introduction</a><ul id="R-subsections-f5db5b284a3d023503978d00824e9c16" class="morespace collapsible-menu">
+          <li data-nav-id="/vehicle_signal_specification/introduction/overview/index.html" class=""><a class="padding" href="/vehicle_signal_specification/introduction/overview/index.html">Overview</a></li>
           <li data-nav-id="/vehicle_signal_specification/introduction/taxonomy/index.html" class=""><a class="padding" href="/vehicle_signal_specification/introduction/taxonomy/index.html">Taxonomies</a></li></ul></li>
           <li data-nav-id="/vehicle_signal_specification/governance/index.html" class=""><a class="padding" href="/vehicle_signal_specification/governance/index.html">Governance</a></li>
           <li data-nav-id="/vehicle_signal_specification/rule_set/index.html" class=""><a class="padding" href="/vehicle_signal_specification/rule_set/index.html">Rule Set</a><ul id="R-subsections-816430a737ffa7bef5da453d8c2d55d4" class="morespace collapsible-menu">
@@ -218,7 +177,7 @@ for other domains.</p>
           <li data-nav-id="/vehicle_signal_specification/rule_set/instances/index.html" class=""><a class="padding" href="/vehicle_signal_specification/rule_set/instances/index.html">Instances</a></li>
           <li data-nav-id="/vehicle_signal_specification/rule_set/includes/index.html" class=""><a class="padding" href="/vehicle_signal_specification/rule_set/includes/index.html">Includes</a></li>
           <li data-nav-id="/vehicle_signal_specification/rule_set/overlay/index.html" class=""><a class="padding" href="/vehicle_signal_specification/rule_set/overlay/index.html">Overlay</a></li></ul></li>
-          <li data-nav-id="/vehicle_signal_specification/catalog/index.html" class=""><a class="padding" href="/vehicle_signal_specification/catalog/index.html">VSS Catalog</a><ul id="R-subsections-665f6cae1c56b0dcfe0d69bfe3f4be93" class="morespace collapsible-menu">
+          <li data-nav-id="/vehicle_signal_specification/catalog/index.html" class="active parent "><a class="padding" href="/vehicle_signal_specification/catalog/index.html">VSS Catalog</a><ul id="R-subsections-665f6cae1c56b0dcfe0d69bfe3f4be93" class="morespace collapsible-menu">
           <li data-nav-id="/vehicle_signal_specification/catalog/vehicle_motion_management/index.html" class=""><a class="padding" href="/vehicle_signal_specification/catalog/vehicle_motion_management/index.html">Vehicle Motion Management</a></li></ul></li>
           <li data-nav-id="/vehicle_signal_specification/license/index.html" class=""><a class="padding" href="/vehicle_signal_specification/license/index.html">License</a></li>
           <li data-nav-id="/vehicle_signal_specification/ecosystem/index.html" class=""><a class="padding" href="/vehicle_signal_specification/ecosystem/index.html">Ecosystem</a><ul id="R-subsections-30d29cf6aaa7fb1e0e056430337d3cd8" class="morespace collapsible-menu">
@@ -246,7 +205,7 @@ for other domains.</p>
                   <div class="control-style">
                     <label class="a11y-only" for="R-select-language">Language</label>
                     <select id="R-select-language" onchange="location = this.querySelector( this.value ).dataset.url;">
-                      <option id="R-select-language-en" value="#R-select-language-en" data-url="/vehicle_signal_specification/introduction/overview/index.html" lang="en-us" selected></option>
+                      <option id="R-select-language-en" value="#R-select-language-en" data-url="/vehicle_signal_specification/catalog/index.html" lang="en-us" selected></option>
                     </select>
                   </div>
                   <div class="clear"></div>
